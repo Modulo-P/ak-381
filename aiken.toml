@@ -1,0 +1,14 @@
+name = "modulo-p/ak-381"
+version = "0.0.0"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'modulo-p/ak-381'"
+
+[repository]
+user = "modulo-p"
+project = "ak-381"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "1.7.0"
+source = "github"
