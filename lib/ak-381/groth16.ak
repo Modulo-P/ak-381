@@ -20,6 +20,10 @@ pub fn pairing(alfa: G1, beta: G2) -> Bool {
   todo
 }
 
-pub fn groth_verify(vk: VerificationKey, proof: Proof) -> Bool {
+pub fn groth_verify(
+  vk: VerificationKey,
+  proof: Proof,
+  public: List<Int>,
+) -> Bool {
   todo
 }
