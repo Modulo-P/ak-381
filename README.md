@@ -1,4 +1,10 @@
-# ak-381
+# ZK-verification code written in Aiken
+
+We implement the ZK-verification code tailored to *snarkjs* output, using Aiken's **bls12_381** built-in primitives.
+
+# Standard Aiken Documentation
+
+## ak-381
 
 Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.
 
@@ -12,13 +18,13 @@ validator {
 }
 ```
 
-## Building
+### Building
 
 ```sh
 aiken build
 ```
 
-## Testing
+### Testing
 
 You can write tests in any module using the `test` keyword. For example:
 
@@ -40,7 +46,7 @@ To run only tests matching the string `foo`, do:
 aiken check -m foo
 ```
 
-## Documentation
+### Documentation
 
 If you're writing a library, you might want to generate an HTML documentation for it.
 
@@ -50,6 +56,6 @@ Use:
 aiken docs
 ```
 
-## Resources
+### Resources
 
 Find more on the [Aiken's user manual](https://aiken-lang.org).
