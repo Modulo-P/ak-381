@@ -1,61 +1,39 @@
-# ZK-verification code written in Aiken
+# AK-381: A SNARK verification library using bls12-381
 
-We implement the ZK-verification code tailored to *snarkjs* output, using Aiken's **bls12_381** built-in primitives.
+This Aiken library implements utilities to verificate Zero-Knowledge proof following the Groth16 protocol. The main feature is a Zero-Knowledge verification function. The library is tailored to use with the Circom language and/or the SnarkJs modules. 
 
-# Standard Aiken Documentation
 
-## ak-381
+### Requisites
 
-Write validators in the `validators` folder, and supporting functions in the `lib` folder using `.ak` as a file extension.
+In order to use this library you must have circom and Snarkjs. You can get both installed following this part of the [circom documentation](https://docs.circom.io/getting-started/installation/)
 
-For example, as `validators/always_true.ak`
+### Structure folder
 
-```gleam
-validator {
-  fn spend(_datum: Data, _redeemer: Data, _context: Data) -> Bool {
-    True
-  }
-}
+* Circuits: The folder where you put your circom circuits.
+* 3_fac: The output of the circuit that we use as example.
+
+
+### Start Grot16 process
+
+Once you circom file is set in your circuits folder, you can start the Groth16 protocol from setup, to proof and verification using: 
+
+```bash
+./groth16
 ```
 
-### Building
+And it's going to ask you about the circuit that you want to use. It is going to create you a folder with the name of the circuit which will storage all the outputs of the process.
 
-```sh
-aiken build
-```
+### Use it with SnarkJs
 
-### Testing
+Todo
 
-You can write tests in any module using the `test` keyword. For example:
+### The 3 factorization example
 
-```gleam
-test foo() {
-  1 + 1 == 2
-}
-```
+Todo
 
-To run all tests, simply do:
+### Verify the proof
 
-```sh
-aiken check
-```
+Todo
 
-To run only tests matching the string `foo`, do:
 
-```sh
-aiken check -m foo
-```
 
-### Documentation
-
-If you're writing a library, you might want to generate an HTML documentation for it.
-
-Use:
-
-```sh
-aiken docs
-```
-
-### Resources
-
-Find more on the [Aiken's user manual](https://aiken-lang.org).
