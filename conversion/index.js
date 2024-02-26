@@ -13,14 +13,12 @@ function uncompressedFq(number) {
 
 function uncompressedG1(point) {
   const x = uncompressedFq(point[0]);
-  const y = uncompressedFq(point[1]);
-  return x + y;
+  return x;
 }
 
 function uncompressedG2(point) {
   const x = uncompressedFq(point[0][0]) + uncompressedFq(point[0][1]);
-  const y = uncompressedFq(point[1][0]) + uncompressedFq(point[1][1]);
-  return x + y;
+  return x;
 }
 
 function convertProofToUncompressed(proof) {
