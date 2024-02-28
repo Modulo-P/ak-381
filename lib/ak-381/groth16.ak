@@ -1,5 +1,4 @@
 use aiken.{G1Element}
-// ,MillerLoopResult
 use aiken/builtin.{
   bls12_381_final_verify, bls12_381_g1_add, bls12_381_g1_compress,
   bls12_381_g1_scalar_mul, bls12_381_g1_uncompress, bls12_381_g2_uncompress,
@@ -90,13 +89,13 @@ test groth_verify_1() {
   //  Template of Proof
   let pk: Proof =
     Proof {
-      piA: #"b28cb29bc282be68df977b35eb9d8e98b3a0a3fc7c372990bddc50419ca86693e491755338fed4fb42231a7c081252ce",
-      piB: #"b9215e5bc481ba6552384c89c23d45bd650b69462868248bfbb83aee7060579404dba41c781dec7c2bec5fccec06842e0e66ad6d86c7c76c468a32c9c0080eea0219d0953b44b1c4f5605afb1e5a3193264ff730222e94f55207628235f3b423",
-      piC: #"886a574105c0da95915c36025637e5b80c7c00c4a264b529b465c273ade3e38f15dc7840498a1aefb44a24a0070a2ff6",
+      piA: #"8b84d092731c653b1accdda79c51e3f5d289bed7311189d927deadef0470e437e6d1d400634726512a79a015867424e3",
+      piB: #"92cb1c125816e4b522c7f430a5d74a61116b6189de7b2341f040194c02f10d9ef0cf081f4029444a65ea74e69d98b1cf08d3864087d5d2dee2ed6ab102f9b78e65d341f0824341a9fc25d0ea9dacccc5d355b4eddb0057949370a19c47135b0e",
+      piC: #"a4ef633c858a3ff194db50eacdf715f7296fb3d1202c54b543284e9656b69aa90f33ac0e2572d3ab847b88268dcd1f7e",
     }
   // Template of public values
   let public_values: List<Int> =
-    [562, 3]
+    [561, 3]
 
   groth_verify(vk, pk, public_values)
 }
