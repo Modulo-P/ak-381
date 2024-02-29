@@ -263,31 +263,3 @@ test groth_verify_fail_3() fail {
 
   groth_verify(vk, pk, public_values)
 }
-//test list_g1_equality() {
-//  [
-//    #<Bls12_381, G1>"8e02a87c519c3145f984d25fdf769f74fbc36626c385d4554fb4bc1d7a12cbf669d40f257023b8b3c9a31e631aa8f981",
-//    #<Bls12_381, G1>"a41a0e6370c054be0f9acce08e97f6d5702d9daa9e9a934e8a377f553593baa1c58062adc73d63558653422d54d6f50c",
-//    #<Bls12_381, G1>"8e02a87c519c3145f984d25fdf769f74fbc36626c385d4554fb4bc1d7a12cbf669d40f257023b8b3c9a31e631aa8f981",
-//  ] == [
-//    #<Bls12_381, G1>"8e02a87c519c3145f984d25fdf769f74fbc36626c385d4554fb4bc1d7a12cbf669d40f257023b8b3c9a31e631aa8f981",
-//    #<Bls12_381, G1>"a41a0e6370c054be0f9acce08e97f6d5702d9daa9e9a934e8a377f553593baa1c58062adc73d63558653422d54d6f50c",
-//    #<Bls12_381, G1>"8e02a87c519c3145f984d25fdf769f74fbc36626c385d4554fb4bc1d7a12cbf669d40f257023b8b3c9a31e631aa8f981",
-//  ]
-//}
-
-//test map_ic_test() {
-//  let list_alfa =
-//    [
-//      #"b5813c90d3455acb8608fdf66e8601f24ef048f3fdf9384862d77c72cb5cddfde2b307976b1b0319c42ba985f94be60a",
-//    ]
-//
-//  let list_beta =
-//    [
-//      #<Bls12_381, G1>"b5813c90d3455acb8608fdf66e8601f24ef048f3fdf9384862d77c72cb5cddfde2b307976b1b0319c42ba985f94be60a",
-//    ]
-//  let map_over_alpha = map(list_alfa, fn(n) { bls12_381_g1_uncompress(n) })
-//  map_over_alpha == list_beta
-//  //let check_lists =
-//  //  map2(map_over_alpha, list_beta, fn(a, b) { bls12_381_g1_equal(a, b) })
-//  //check_lists == [True]
-//}
