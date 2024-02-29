@@ -3,7 +3,7 @@ use aiken/builtin.{
   bls12_381_g1_scalar_mul, bls12_381_g1_uncompress, bls12_381_g2_uncompress,
   bls12_381_miller_loop, bls12_381_mul_miller_loop_result,
 }
-use aiken/list.{head, map2, reduce, tail}
+use aiken/list.{head, map, map2, reduce, tail}
 
 pub type SnarkVerificationKey {
   nPublic: Int,
@@ -49,30 +49,12 @@ pub fn groth_verify(
 
   expect Some(vk_ic_head) = head(vk.vkIC)
   expect Some(vk_ic_tail) = tail(vk.vkIC)
-  //let vkICHead: G1Element = bls12_381_g1_uncompress(vk_ic_head)
-  //let vkICTail: List<G1Element> =
-  //  map(vk_ic_tail, fn(n) { bls12_381_g1_uncompress(n) })
-  let derived_vkIC =
-    map2(
-      public,
-      vk_ic_tail,
-      fn(a, b) {
-        bls12_381_g1_uncompress(b)
-          |> bls12_381_g1_scalar_mul(a, _)
-          |> bls12_381_g1_compress()
-      },
-    )
-  //let derived_vkIC = map2(public, vkICTail, bls12_381_g1_scalar_mul )
-  let vkI =
-    reduce(
-      derived_vkIC,
-      vk_ic_head,
-      fn(a, b) {
-        bls12_381_g1_add(bls12_381_g1_uncompress(a), bls12_381_g1_uncompress(b))
-          |> bls12_381_g1_compress()
-      },
-    )
-  let eIGamma = pairing(vkI, vk.vkGamma)
+  let vkICHead: G1Element = bls12_381_g1_uncompress(vk_ic_head)
+  let vkICTail: List<G1Element> =
+    map(vk_ic_tail, fn(n) { bls12_381_g1_uncompress(n) })
+  let derived_vkIC = map2(public, vkICTail, bls12_381_g1_scalar_mul)
+  let vkI = reduce(derived_vkIC, vkICHead, bls12_381_g1_add)
+  let eIGamma = pairing(bls12_381_g1_compress(vkI), vk.vkGamma)
   let eCDelta = pairing(proof.piC, vk.vkDelta)
 
   // * Miller functions
