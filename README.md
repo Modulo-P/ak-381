@@ -45,6 +45,15 @@ installed following this part of the
 - conversion: The javascript module where you can convert the proof and
   verification-key given by circom into the serialization that Plutus need.
 
+## Import the module into your Aiken project
+
+To import the module you must execute the following command with the
+corresponding version. At the momment the version is `v0.1`.
+
+```bash
+aiken packages add modulo-p/ak-381 --version v0.1
+```
+
 ## The Groth16 process.
 
 Groth16 is a zk-SNARK protocol that is characterized by its lighter proof and
