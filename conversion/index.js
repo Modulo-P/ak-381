@@ -2,6 +2,12 @@ const fs = require("fs");
 const bb = require("bigint-buffer");
 const ff = require("ffjavascript");
 
+const args = process.argv;
+
+if (args.length == 1) {
+  console.log('Just one path argument is needed!');
+} 
+
 const proof = JSON.parse(fs.readFileSync("proof.json", "utf-8"));
 const verificationKey = JSON.parse(fs.readFileSync("verification_key.json", "utf-8"));
 
@@ -118,16 +124,13 @@ async function convertVerificationKeyToUncompressed(verificationKey) {
 }
 
 async function printCompressedProof() {
-  console.log("Compressed proof", JSON.stringify(await convertProofToUncompressed(proof)));
+  console.log("Uncompressed proof", JSON.stringify(await convertProofToUncompressed(proof)));
 }
 
-printCompressedProof();
 
 async function printCompressedVerificationKey() {
   console.log("\n\nUncompressed verification key", JSON.stringify(await convertVerificationKeyToUncompressed(verificationKey)));
 }
-
-printCompressedVerificationKey();
 
 
 async function ffTest() {
@@ -165,6 +168,10 @@ async function ffTest() {
   console.log("G1 from compressed is valid", curve.G1.isValid(g1ElementFromCompressed));
 }
 
-// ffTest();
+async function run_program () {
+  await printCompressedVerificationKey();
+  await printCompressedProof();
+  process.exit();
+}
 
-
+run_program();
