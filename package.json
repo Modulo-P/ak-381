@@ -1,0 +1,31 @@
+{
+  "name": "ak-381",
+  "version": "1.0.0",
+  "description": "Zero-Knowledge library for Groth16",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Modulo-P/ak-381.git"
+  },
+  "keywords": [
+    "zk"
+  ],
+  "author": "Modp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Modulo-P/ak-381/issues"
+  },
+  "homepage": "https://github.com/Modulo-P/ak-381#readme",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
