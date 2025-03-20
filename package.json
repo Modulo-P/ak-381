@@ -27,5 +27,8 @@
   "homepage": "https://github.com/Modulo-P/ak-381#readme",
   "devDependencies": {
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "snarkjs": "^0.7.5"
   }
 }
