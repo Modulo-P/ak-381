@@ -114,8 +114,7 @@ test groth_verify_pass_1() {
       piC: #"a4ef633c858a3ff194db50eacdf715f7296fb3d1202c54b543284e9656b69aa90f33ac0e2572d3ab847b88268dcd1f7e",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [561, 3]
+  let public_values: List<Int> = [561, 3]
 
   groth_verify(vk, pk, public_values)
 }
@@ -147,8 +146,7 @@ test groth_verify_fail_1() fail {
       piC: #"8b84d092731c653b1accdda79c51e3f5d289bed7311189d927deadef0470e437e6d1d400634726512a79a015867424e3",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [561, 3]
+  let public_values: List<Int> = [561, 3]
 
   groth_verify(vk, pk, public_values)
 }
@@ -180,8 +178,7 @@ test groth_verify_pass_2() {
       piC: #"8bc8cc3f11483138cc55d5f0389e67231f9e8465e5cb4a5a668e6e298d5c4febb2a18e86881c84dd03c5d33db65af272",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [8827, 7]
+  let public_values: List<Int> = [8827, 7]
 
   groth_verify(vk, pk, public_values)
 }
@@ -213,8 +210,7 @@ test groth_verify_fail_2() fail {
       piC: #"8e02a87c519c3145f984d25fdf769f74fbc36626c385d4554fb4bc1d7a12cbf669d40f257023b8b3c9a31e631aa8f981",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [8827, 7]
+  let public_values: List<Int> = [8827, 7]
 
   groth_verify(vk, pk, public_values)
 }
@@ -246,8 +242,7 @@ test groth_verify_pass_3() {
       piC: #"920d63da640fc265b6cd49dc2c4b18cf5d809872e9b7252575047a1473b228ff50390f6420343e861e2c007b59d15205",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [16393, 13]
+  let public_values: List<Int> = [16393, 13]
 
   groth_verify(vk, pk, public_values)
 }
@@ -279,8 +274,7 @@ test groth_verify_fail_3() fail {
       piC: #"8bc8cc3f11483138cc55d5f0389e67231f9e8465e5cb4a5a668e6e298d5c4febb2a18e86881c84dd03c5d33db65af272",
     }
   // Template of public values
-  let public_values: List<Int> =
-    [16393, 13]
+  let public_values: List<Int> = [16393, 13]
 
   groth_verify(vk, pk, public_values)
 }

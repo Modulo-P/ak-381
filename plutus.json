@@ -1,0 +1,14 @@
+{
+  "preamble": {
+    "title": "modulo-p/ak-381",
+    "description": "Aiken contracts for project 'modulo-p/ak-381'",
+    "version": "0.0.0",
+    "plutusVersion": "v3",
+    "compiler": {
+      "name": "Aiken",
+      "version": "v1.1.10+b25afa2"
+    },
+    "license": "Apache-2.0"
+  },
+  "validators": []
+}
