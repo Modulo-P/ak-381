@@ -115,7 +115,7 @@ snarkjs wc 3_fac_js/3_fac.wasm input.json witness.wtns
 With the witness ready we can compute the proof.
 
 ```bash
-narkjs g16p 3_fac_final.zkey witness.wtns proof.json public.json
+snarkjs g16p 3_fac_final.zkey witness.wtns proof.json public.json
 ```
 
 **Verifying the proof**
