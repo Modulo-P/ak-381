@@ -43,7 +43,7 @@ echo "[Setup](11/22): Export r1cs to json"
 snarkjs r1cs export json ${OUTPUT_PATH}${CIRCUIT_NAME}.r1cs ${OUTPUT_PATH}${CIRCUIT_NAME}.r1cs.json
 
 echo "[Setup](12/22): Generate witness"
-node ${OUTPUT_PATH}${CIRCUIT_NAME}_js/generate_witness.js ${OUTPUT_PATH}${CIRCUIT_NAME}_js/mastermind.wasm mastermind.input.json  ${OUTPUT_PATH}witness.wtns
+node ${OUTPUT_PATH}${CIRCUIT_NAME}_js/generate_witness.js ${OUTPUT_PATH}${CIRCUIT_NAME}_js/${CIRCUIT_NAME}.wasm ${OUTPUT_PATH}input.json  ${OUTPUT_PATH}witness.wtns
 
 echo "[Setup](13/22): Check witness"
 snarkjs wtns check ${OUTPUT_PATH}$CIRCUIT_NAME.r1cs  ${OUTPUT_PATH}witness.wtns
